@@ -32,10 +32,10 @@ jobs:
             --vendor "Nikita Chalovka" ^
             --input target ^
             --main-jar service-order-system-1.0.jar ^
-            --main-class com.example.ordersystem.Main ^
+            --main-class com.example.ordersystem.Launcher ^
             --dest dist ^
             --win-menu ^
-            --win-shortcut
+            --win-shortcut  
 
       - name: Upload installer
         uses: actions/upload-artifact@v4
