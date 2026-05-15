@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml"
+  fx:controller="com.example.ordersystem.controller.LoginController">
+
+  <children>
+
+    <VBox alignment="CENTER"
+      spacing="15"
+      prefWidth="350"
+      styleClass="left-panel">
+
+      <children>
+        <Label text="Service Order System"
+          styleClass="logo-title"/>
+
+        <Label text="Система управління замовленнями"
+          styleClass="logo-subtitle"/>
+      </children>
+
+    </VBox>
+
+    <VBox alignment="CENTER"
+      spacing="15"
+      prefWidth="450"
+      styleClass="auth-page">
+
+      <padding>
+        <Insets top="40" right="50" bottom="40" left="50"/>
+      </padding>
+
+      <children>
+
+        <Label text="Увійти"
+          styleClass="auth-title"/>
+
+        <TextField fx:id="usernameField"
+          promptText="Email or username"
+          styleClass="auth-input"/>
+
+        <PasswordField fx:id="passwordField"
+          promptText="Password"
+          styleClass="auth-input"/>
+
+        <Label fx:id="errorLabel"
+          styleClass="error-label"/>
+
+        <Button text="Login"
+          onAction="#handleLogin"
+          styleClass="primary-button"/>
+
+        <Hyperlink text="Нема акаунту? Зареєструйтесь"
+          onAction="#openRegister"/>
+
+      </children>
+
+    </VBox>
+
+  </children>
+
+</HBox>

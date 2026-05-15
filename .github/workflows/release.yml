@@ -1,0 +1,43 @@
+name: Build JavaFX Installer
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build project
+        run: mvn clean package -DskipTests
+
+      - name: Create installer
+        run: |
+          jpackage ^
+            --type exe ^
+            --name "Service Order System" ^
+            --app-version "1.0.0" ^
+            --vendor "Nikita Chalovka" ^
+            --input target ^
+            --main-jar service-order-system-1.0.jar ^
+            --main-class com.example.ordersystem.Main ^
+            --dest dist ^
+            --win-menu ^
+            --win-shortcut
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: installer
+          path: dist/*

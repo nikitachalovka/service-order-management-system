@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+  fx:controller="com.example.ordersystem.controller.DashboardController">
+
+  <top>
+    <HBox spacing="10">
+      <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+      </padding>
+
+      <Label text="Dashboard"
+        style="-fx-font-size: 22px;"/>
+    </HBox>
+  </top>
+
+  <center>
+    <TabPane>
+
+      <Tab text="Clients" closable="false">
+        <VBox spacing="10">
+          <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+          </padding>
+
+          <HBox spacing="10">
+            <TextField fx:id="clientSearchField" promptText="Search client"/>
+            <Button text="Search" onAction="#handleSearchClients"/>
+          </HBox>
+
+          <TextField fx:id="nameField" promptText="Client name"/>
+          <TextField fx:id="phoneField" promptText="Phone"/>
+          <TextField fx:id="emailField" promptText="Email"/>
+
+          <HBox spacing="10">
+            <Button text="Add Client" onAction="#handleAddClient"/>
+            <Button fx:id="updateClientButton" text="Update Client" onAction="#handleUpdateClient"/>
+            <Button fx:id="deleteClientButton" text="Delete Client" onAction="#handleDeleteClient"/>
+          </HBox>
+
+          <TableView fx:id="clientTable">
+            <columns>
+              <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+              <TableColumn fx:id="nameColumn" text="Name" prefWidth="180"/>
+              <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="180"/>
+              <TableColumn fx:id="emailColumn" text="Email" prefWidth="250"/>
+            </columns>
+          </TableView>
+        </VBox>
+      </Tab>
+
+      <Tab text="Services" closable="false">
+        <VBox spacing="10">
+          <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+          </padding>
+
+          <TextField fx:id="serviceNameField" promptText="Service name"/>
+          <TextField fx:id="serviceDescriptionField" promptText="Description"/>
+          <TextField fx:id="servicePriceField" promptText="Price"/>
+
+          <HBox spacing="10">
+            <Button fx:id="addServiceButton" text="Add Service" onAction="#handleAddService"/>
+            <Button fx:id="updateServiceButton" text="Update Service" onAction="#handleUpdateService"/>
+            <Button fx:id="deleteServiceButton" text="Delete Service" onAction="#handleDeleteService"/>
+          </HBox>
+
+          <TableView fx:id="serviceTable">
+            <columns>
+              <TableColumn fx:id="serviceIdColumn" text="ID" prefWidth="50"/>
+              <TableColumn fx:id="serviceNameColumn" text="Name" prefWidth="180"/>
+              <TableColumn fx:id="serviceDescriptionColumn" text="Description" prefWidth="350"/>
+              <TableColumn fx:id="servicePriceColumn" text="Price" prefWidth="120"/>
+            </columns>
+          </TableView>
+        </VBox>
+      </Tab>
+
+      <Tab text="Orders" closable="false">
+        <VBox spacing="10">
+          <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+          </padding>
+
+          <HBox spacing="10">
+            <TextField fx:id="orderSearchField" promptText="Search order by client/service/status"/>
+            <Button text="Search" onAction="#handleSearchOrders"/>
+          </HBox>
+
+          <ComboBox fx:id="orderClientComboBox" promptText="Select client"/>
+          <ComboBox fx:id="orderServiceComboBox" promptText="Select service"/>
+          <TextField fx:id="orderStatusField" promptText="Status: NEW / IN_PROGRESS / DONE / CANCELLED"/>
+          <TextField fx:id="orderQuantityField" promptText="Quantity"/>
+
+          <HBox spacing="10">
+            <Button text="Add Order" onAction="#handleAddOrder"/>
+            <Button fx:id="deleteOrderButton" text="Delete Order" onAction="#handleDeleteOrder"/>
+          </HBox>
+
+          <TableView fx:id="orderTable">
+            <columns>
+              <TableColumn fx:id="orderIdColumn" text="ID" prefWidth="50"/>
+              <TableColumn fx:id="orderClientColumn" text="Client" prefWidth="160"/>
+              <TableColumn fx:id="orderServiceColumn" text="Service" prefWidth="180"/>
+              <TableColumn fx:id="orderStatusColumn" text="Status" prefWidth="140"/>
+              <TableColumn fx:id="orderDateColumn" text="Created At" prefWidth="180"/>
+              <TableColumn fx:id="orderTotalColumn" text="Total" prefWidth="120"/>
+            </columns>
+          </TableView>
+        </VBox>
+      </Tab>
+
+    </TabPane>
+  </center>
+
+</BorderPane>

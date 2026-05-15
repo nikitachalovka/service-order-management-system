@@ -1,0 +1,248 @@
+.root {
+  -fx-font-family: "Segoe UI";
+  -fx-background-color: #f4f6f9;
+}
+
+/* Common */
+
+.label {
+  -fx-text-fill: #2c3e50;
+}
+
+.text-field,
+.password-field {
+  -fx-background-color: white;
+  -fx-border-color: #dcdde1;
+  -fx-border-radius: 8;
+  -fx-background-radius: 8;
+  -fx-padding: 8;
+  -fx-font-size: 14px;
+}
+
+.text-field:focused,
+.password-field:focused {
+  -fx-border-color: #3498db;
+  -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.3), 8, 0, 0, 0);
+}
+
+.button {
+  -fx-background-color: #3498db;
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 8;
+  -fx-padding: 8 16 8 16;
+  -fx-cursor: hand;
+}
+
+.button:hover {
+  -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+  -fx-background-color: #1f6391;
+}
+
+/* Login/Register */
+
+.left-panel {
+  -fx-background-color: white;
+  -fx-alignment: center;
+  -fx-spacing: 15;
+}
+
+.logo-title {
+  -fx-font-size: 30px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #1e3a8a;
+}
+
+.logo-subtitle {
+  -fx-font-size: 17px;
+  -fx-text-fill: #64748b;
+}
+
+.auth-page {
+  -fx-background-color: #eef2ff;
+}
+
+.auth-title {
+  -fx-font-size: 34px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #2563eb;
+}
+
+.auth-input {
+  -fx-pref-width: 320px;
+  -fx-pref-height: 45px;
+  -fx-background-color: white;
+  -fx-border-color: #93c5fd;
+  -fx-background-radius: 15px;
+  -fx-border-radius: 15px;
+  -fx-font-size: 14px;
+}
+
+.code-field {
+  -fx-pref-width: 170px;
+  -fx-pref-height: 40px;
+  -fx-background-color: white;
+  -fx-border-color: #93c5fd;
+  -fx-background-radius: 12px;
+  -fx-border-radius: 12px;
+  -fx-font-size: 14px;
+}
+
+.primary-button {
+  -fx-background-color: #2563eb;
+  -fx-text-fill: white;
+  -fx-font-size: 15px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 12px;
+  -fx-pref-width: 140px;
+  -fx-pref-height: 42px;
+}
+
+.primary-button:hover {
+  -fx-background-color: #1d4ed8;
+}
+
+.secondary-button {
+  -fx-background-color: white;
+  -fx-text-fill: #2563eb;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-border-color: #2563eb;
+  -fx-background-radius: 12px;
+  -fx-border-radius: 12px;
+  -fx-pref-width: 130px;
+  -fx-pref-height: 42px;
+}
+
+.secondary-button:hover {
+  -fx-background-color: #dbeafe;
+}
+
+.error-label {
+  -fx-text-fill: red;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+}
+
+.hyperlink {
+  -fx-text-fill: #2563eb;
+  -fx-font-size: 13px;
+}
+
+/* Dashboard */
+
+.combo-box {
+  -fx-background-color: white;
+  -fx-border-color: #dcdde1;
+  -fx-border-radius: 8;
+  -fx-background-radius: 8;
+}
+
+.combo-box:focused {
+  -fx-border-color: #3498db;
+}
+
+.combo-box .list-cell {
+  -fx-padding: 6 10 6 10;
+  -fx-font-size: 14px;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+  -fx-background-color: #ecf0f1;
+}
+
+.tab {
+  -fx-background-color: #dfe6e9;
+  -fx-background-radius: 8 8 0 0;
+  -fx-padding: 8 16 8 16;
+}
+
+.tab:selected {
+  -fx-background-color: #3498db;
+}
+
+.tab:selected .tab-label {
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+}
+
+.tab:hover {
+  -fx-background-color: #74b9ff;
+}
+
+.tab:hover .tab-label {
+  -fx-text-fill: white;
+}
+
+.table-view {
+  -fx-background-color: white;
+  -fx-border-color: #dcdde1;
+  -fx-border-radius: 10;
+  -fx-background-radius: 10;
+}
+
+.table-view .column-header-background {
+  -fx-background-color: #3498db;
+  -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+  -fx-size: 40;
+  -fx-border-color: transparent;
+  -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+}
+
+.table-row-cell {
+  -fx-background-color: white;
+  -fx-cell-size: 38px;
+}
+
+.table-row-cell:selected {
+  -fx-background-color: #d6eaf8;
+}
+
+.table-row-cell:hover {
+  -fx-background-color: #ecf5fc;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+  -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+  -fx-background-color: #b2bec3;
+  -fx-background-radius: 10;
+}
+
+.scroll-bar .thumb:hover {
+  -fx-background-color: #95a5a6;
+}
+
+.dialog-pane {
+  -fx-background-color: white;
+}
+
+.dialog-pane .button {
+  -fx-background-color: #3498db;
+}
+.field-error {
+  -fx-text-fill: #ef4444;
+  -fx-font-size: 12px;
+  -fx-font-weight: normal;
+}
+
+.input-error {
+  -fx-border-color: #ef4444;
+  -fx-border-width: 2px;
+}
