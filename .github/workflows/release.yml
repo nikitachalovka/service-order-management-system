@@ -23,6 +23,7 @@ jobs:
         run: mvn clean package "-Dmaven.test.skip=true"
 
       - name: Create installer
+        shell: cmd
         run: |
           jpackage ^
             --type exe ^
